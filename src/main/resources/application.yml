@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: family_ui
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
