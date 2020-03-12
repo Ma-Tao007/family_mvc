@@ -34,7 +34,7 @@ public class LoginIntercept implements HandlerInterceptor {
         System.out.println("servletPath:"+servltPath+";requestUrl:"+requestUrl);
 
         //需要验证的请求
-        return false;
+        return true;
     }
 
     /**
@@ -45,8 +45,7 @@ public class LoginIntercept implements HandlerInterceptor {
      * @param modelAndView
      * @throws Exception
      */
-    @Override
-    public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-
-    }
+//    @Override
+//    public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
+//    }
 }

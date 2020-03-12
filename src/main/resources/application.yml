@@ -1,7 +1,33 @@
 spring:
-  application:
-    name: family_ui
-  mvc:
-    view:
-      prefix: /WEB-INF/jsp/
-      suffix: .jsp
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/demo?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  thymeleaf:
+    prefix: classpath:/templates/
+    check-template-location: true
+    suffix: .html
+    encoding: UTF-8
+    mode: HTML5
+    cache: false
+    servlet:
+      content-type: text/html
+##MyBatis配置
+mybatis:
+  type-aliases-package: com.example.family.entity  # 注意：对应实体类的路径
+  mapper-locations: classpath:com/example/family/entity/**/*.xml  #注意：一定要对应mapper映射xml文件的所在路径
+
+#路径配置项目名
+server:
+  servlet:
+    context-path: /family
+
+#showSql
+logging:
+  level:
+    com:
+      example:
+        family :
+          mapper: debug
