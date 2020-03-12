@@ -2,16 +2,12 @@ package com.example.family.controller;
 
 import com.example.family.entity.User;
 import com.example.family.service.IUserSearch;
-import com.example.family.service.impl.UserSearchImpl;
 import com.example.family.utils.JsonWrite;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletResponse;
 
 /*
 @description
@@ -24,12 +20,17 @@ public class LoginController {
     private IUserSearch userSearch;
     @RequestMapping("/")
     public String index() {
-        return "index";
+        return "login/login";
     }
 
     @RequestMapping("/login/main")
     @ResponseBody
     public JsonWrite getLoginPage(User user) {
         return userSearch.selectUserByUsername(user);
+    }
+
+    @RequestMapping("index")
+    public String getIndexPage(){
+        return "index";
     }
 }
