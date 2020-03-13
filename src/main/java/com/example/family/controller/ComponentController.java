@@ -22,7 +22,7 @@ public class ComponentController {
         return "component/grid/mobile";
     }
 
-    @RequestMapping("grid/mobile_pc")
+    @RequestMapping("grid/mobile-pc")
     public String getMobilePC(){
         return "component/grid/mobile-pc";
     }
@@ -225,4 +225,50 @@ public class ComponentController {
     public String getTableThead(){
         return "component/table/thead";
     }
+
+    @RequestMapping("laypage/demo1")
+    public String getLaypageDemo1(){
+        return "component/laypage/demo1";
+    }
+
+    @RequestMapping("laypage/demo2")
+    public String getLaypageDemo2(){
+        return "component/laypage/demo2";
+    }
+
+    @RequestMapping("upload/demo1")
+    public String getUploadDemo1(){
+        return "component/upload/demo1";
+    }
+
+    @RequestMapping("upload/demo2")
+    public String getUploadDemo2(){
+        return "component/upload/demo2";
+    }
+
+    @RequestMapping("rate/index")
+    public String getRateIndex(){
+        return "component/rate/index";
+    }
+
+    @RequestMapping("carousel/index")
+    public String getCarouselIndex(){
+        return "component/carousel/index";
+    }
+
+    @RequestMapping("flow/index")
+    public String getFlowIndex(){
+        return "component/flow/index";
+    }
+
+    @RequestMapping("util/index")
+    public String getUtilIndex(){
+        return "component/util/index";
+    }
+
+    @RequestMapping("code/index")
+    public String getCodeIndex(){
+        return "component/code/index";
+    }
+
 }

@@ -33,4 +33,35 @@ public class LoginController {
     public String getIndexPage(){
         return "index";
     }
+
+    @RequestMapping("user/reg")
+    public String getUserReg(){
+        return "user/reg";
+    }
+
+    @RequestMapping("user/login")
+    public String getUserLogin(){
+        return "user/login";
+    }
+
+    @RequestMapping("user/forget")
+    public String getUserForget(){
+        return "user/forget";
+    }
+
+    @RequestMapping("user/user/list")
+    public String getUserUserList(){
+        return "user/user/list";
+    }
+
+    @RequestMapping("user/administrators/list")
+    public String getUserAdminList(){
+        return "user/administrators/list";
+    }
+
+    @RequestMapping("user/administrators/role")
+    public String getUserAminRole(){
+        return "user/administrators/role";
+    }
+
 }
