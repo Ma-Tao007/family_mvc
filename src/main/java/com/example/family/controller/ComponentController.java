@@ -52,6 +52,11 @@ public class ComponentController {
         return "component/form/group";
     }
 
+    @RequestMapping("form/element")
+    public String getFormElement(){
+        return "component/form/element";
+    }
+
     @RequestMapping("nav/index")
     public String getNavIndex(){
         return "component/nav/index";
@@ -67,6 +72,12 @@ public class ComponentController {
         return "component/progress/index";
     }
 
+    @RequestMapping("panel/index")
+    public String getPanelIndex(){
+        return "component/panel/index";
+    }
+
+
     @RequestMapping("badge/index")
     public String getBadgeIndex(){
         return "component/badge/index";
@@ -75,6 +86,11 @@ public class ComponentController {
     @RequestMapping("timeline/index")
     public String getTimelineIndex(){
         return "component/timeline/index";
+    }
+
+    @RequestMapping("auxiliar/index")
+    public String getAuxIndex(){
+        return "component/auxiliar/index";
     }
 
     @RequestMapping("anim/index")
@@ -121,6 +137,12 @@ public class ComponentController {
     public String getTableSimple(){
         return "component/table/simple";
     }
+
+    @RequestMapping("table/static")
+    public String getTableStatic(){
+        return "component/table/static";
+    }
+
     @RequestMapping("table/auto")
     public String getTableAuto(){
         return "component/table/auto";
