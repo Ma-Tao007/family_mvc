@@ -1,15 +1,15 @@
 
 
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
   <meta charset="utf-8">
   <title>表单组合</title>
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
-  <link rel="stylesheet" href="../../../layuiadmin/layui/css/layui.css" media="all">
-  <link rel="stylesheet" href="../../../layuiadmin/style/admin.css" media="all">
+  <link rel="stylesheet" th:href="@{/layui/css/layui.css}" media="all">
+  <link rel="stylesheet" th:href="@{/style/admin.css}" media="all">
 </head>
 <body>
 
@@ -30,7 +30,7 @@
               <input type="text" name="username" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
             </div>
           </div>
-          
+
           <div class="layui-form-item">
             <div class="layui-inline">
               <label class="layui-form-label">验证手机</label>
@@ -45,7 +45,7 @@
               </div>
             </div>
           </div>
-          
+
           <div class="layui-form-item">
             <div class="layui-inline">
               <label class="layui-form-label">多规则验证</label>
@@ -66,7 +66,7 @@
               </div>
             </div>
           </div>
-          
+
           <div class="layui-form-item">
             <label class="layui-form-label">验证身份证</label>
             <div class="layui-input-block">
@@ -80,7 +80,7 @@
             </div>
             <div class="layui-form-mid layui-word-aux">请填写6到12位密码</div>
           </div>
-          
+
           <div class="layui-form-item">
             <div class="layui-inline">
               <label class="layui-form-label">范围</label>
@@ -93,7 +93,7 @@
               </div>
             </div>
           </div>
-          
+
           <div class="layui-form-item">
             <label class="layui-form-label">单行选择框</label>
             <div class="layui-input-block">
@@ -107,8 +107,8 @@
               </select>
             </div>
           </div>
-          
-          
+
+
           <div class="layui-form-item">
             <div class="layui-inline">
               <label class="layui-form-label">分组选择框</label>
@@ -154,7 +154,7 @@
               </div>
             </div>
           </div>
-          
+
           <div class="layui-form-item">
             <label class="layui-form-label">联动选择框</label>
             <div class="layui-input-block">
@@ -189,7 +189,7 @@
               </div>
             </div>
           </div>
-          
+
           <div class="layui-form-item">
             <label class="layui-form-label">复选框</label>
             <div class="layui-input-block">
@@ -198,7 +198,7 @@
               <input type="checkbox" name="like[game]" title="游戏">
             </div>
           </div>
-          
+
           <div class="layui-form-item" pane="">
             <label class="layui-form-label">原始复选框</label>
             <div class="layui-input-block">
@@ -207,7 +207,7 @@
               <input type="checkbox" name="like1[game]" lay-skin="primary" title="游戏" disabled="">
             </div>
           </div>
-          
+
           <div class="layui-form-item">
             <label class="layui-form-label">开关-默认关</label>
             <div class="layui-input-block">
@@ -233,7 +233,7 @@
             <div class="layui-input-block">
               <textarea name="text" placeholder="请输入内容" class="layui-textarea"></textarea>
             </div>
-          </div>        
+          </div>
           <div class="layui-form-item layui-layout-admin">
             <div class="layui-input-block">
               <div class="layui-footer" style="left: 0;">
@@ -247,11 +247,11 @@
     </div>
   </div>
 
-    
-  <script src="../../../layuiadmin/layui/layui.js"></script>  
+
+  <script th:src="@{/layui/layui.js}"></script>
   <script>
   layui.config({
-    base: '../../../layuiadmin/' //静态资源所在路径
+    base: '/' //静态资源所在路径
   }).extend({
     index: 'lib/index' //主入口模块
   }).use(['index', 'form', 'laydate'], function(){
@@ -261,13 +261,13 @@
     ,layer = layui.layer
     ,laydate = layui.laydate
     ,form = layui.form;
-    
+
     form.render(null, 'component-form-group');
 
     laydate.render({
       elem: '#LAY-component-form-group-date'
     });
-    
+
     /* 自定义验证规则 */
     form.verify({
       title: function(value){
@@ -280,7 +280,7 @@
         layedit.sync(editIndex);
       }
     });
-    
+
     /* 监听指定开关 */
     form.on('switch(component-form-switchTest)', function(data){
       layer.msg('开关checked：'+ (this.checked ? 'true' : 'false'), {
@@ -288,7 +288,7 @@
       });
       layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是ON|OFF', data.othis)
     });
-    
+
     /* 监听提交 */
     form.on('submit(component-form-demo1)', function(data){
       parent.layer.alert(JSON.stringify(data.field), {

@@ -1,15 +1,17 @@
 
 
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.w3.org/1999/xhtml"><head>
+
 <head>
   <meta charset="utf-8">
   <title>徽章</title>
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
-  <link rel="stylesheet" href="../../../layuiadmin/layui/css/layui.css" media="all">
-  <link rel="stylesheet" href="../../../layuiadmin/style/admin.css" media="all">
+  <link rel="stylesheet" th:href="@{/layui/css/layui.css}" media="all">
+  <link rel="stylesheet" th:href="@{/style/admin.css}" media="all">
+  <script th:src="@{/layui/layui.js}"></script>
 </head>
 <body>
 
@@ -66,7 +68,7 @@
              
             <br><br>
              
-            <ul class="layui-nav style=" text-align:="" right;"=""> &lt;-- 小Tips：这里有没有发现，设置导航靠右对齐（或居中对齐）其实非常简单 --&gt;
+            <ul class="layui-nav" > &lt;-- 小Tips：这里有没有发现，设置导航靠右对齐（或居中对齐）其实非常简单 --&gt;
               <li class="layui-nav-item">
                 <a href="">控制台<span class="layui-badge">9</span></a>
               </li>
@@ -91,10 +93,9 @@
     </div>
   </div>
 
-  <script src="../../../layuiadmin/layui/layui.js"></script>  
   <script>
   layui.config({
-    base: '../../../layuiadmin/' //静态资源所在路径
+    base: '/' //静态资源所在路径
   }).extend({
     index: 'lib/index' //主入口模块
   }).use(['index']);
